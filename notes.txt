@@ -1,0 +1,61 @@
+[ ] set up file structure 
+
+[ ] create interface where user can input two values
+    [ ] also add the select type of math operation 
+        [ ] ( + - * / )
+    [ ] also add a submit and clear ( = , c ) button
+[ ] submitBtn on click...
+    [ ] capture the input
+    [ ] bundle it up in an object
+    [ ] send this object to the server via a POST
+[ ] c button should clear the input
+
+
+[ ] build out server-side logic to compute numbers 
+    as appropriate.
+    [ ] the server should be able to handle 
+        Addition, Subtraction, 
+        Multiplication and Division
+[ ] once the calculation is complete, send back the OK
+    [ ] Do a GET request after the POST to get the 
+        actual calculation.
+
+
+[ ] Keep a historical record of all math operations
+    and solutions on the server.
+[ ] display a list of all previous calculations
+    when it loads using GET request.
+[ ] update the request when a new calculation
+    is made.
+
+// History should exist 
+// even after refreshing the page. 
+// It's expected that the history 
+// will go away after restarting the server.
+
+STRETCH GOALS 
+
+[ ] Convert the interface to look and behave
+like an actual calculator 
+
+[ ] Only allow the POST call to happen
+    if all necessary input is ready
+    [ ] Show an alert if they left something empty
+        and don't send bad or incomplete
+        data to the server
+[ ] allow a user to clear the history 
+    by clicking on a button
+    [ ] this should not be get or post,
+        Look into 'DELETE' request.
+[ ] allow a user to click on an entry
+    in the history list to re-run that calculation
+    [ ] this should display the answer 
+        on the calculator interface
+        like a normal calculation
+[ ] Deploy to Heroku!
+    ?
+
+
+
+
+    
