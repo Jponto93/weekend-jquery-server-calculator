@@ -1,4 +1,4 @@
-[ ] set up file structure 
+[x] set up file structure 
 
 [ ] create interface where user can input two values
     [ ] also add the select type of math operation 
