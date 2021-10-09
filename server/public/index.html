@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="jquery-3.6.0.min.js"></script>
     <script src="client.js"></script>
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
    
     <title>Server Side Calculator</title>
 </head>
 <h1>Server Side Calculator</h1>
+<body>
 <div id="inputLine">
-    <input type="text" placeholder="Number" class="numberInput">
+    <input type="text" placeholder="Number" id="firstNumber" class="numberInput">
     <span>
-        <button>+</button>
-        <button>-</button>
-        <button>*</button>
-        <button>/</button>
+        <button class="opBtn" data-="0">+</button>
+        <button class="opBtn" data-="1">-</button>
+        <button class="opBtn" data-="2">*</button>
+        <button class="opBtn" data-="3">/</button>
     </span>
-    <input type="text" placeholder="Number" class="numberInput">
-    <button>=</button>
+    <input type="text" placeholder="Number" id="secondNumber" class="numberInput">
+    <button id="submitBtn">=</button>
     <button>C</button>
 </div>
 
@@ -34,7 +35,7 @@
     </ul>
 </div>
 
-<body>
+
     
 </body>
 </html>

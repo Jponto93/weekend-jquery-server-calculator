@@ -4,10 +4,10 @@
     [x] also add the select type of math operation 
         [x] ( + - * / )
     [x] also add a submit and clear ( = , c ) button
-[ ] submitBtn on click...
-    [ ] capture the input
-    [ ] bundle it up in an object
-    [ ] send this object to the server via a POST
+[x] submitBtn on click...
+    [x] capture the input
+    [x] bundle it up in an object
+    [x] send this object to the server via a POST
 [ ] c button should clear the input
 
 
