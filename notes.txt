@@ -1,9 +1,9 @@
 [x] set up file structure 
 
-[ ] create interface where user can input two values
-    [ ] also add the select type of math operation 
-        [ ] ( + - * / )
-    [ ] also add a submit and clear ( = , c ) button
+[x] create interface where user can input two values
+    [x] also add the select type of math operation 
+        [x] ( + - * / )
+    [x] also add a submit and clear ( = , c ) button
 [ ] submitBtn on click...
     [ ] capture the input
     [ ] bundle it up in an object
