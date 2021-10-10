@@ -17,7 +17,7 @@
         Addition, Subtraction, 
         Multiplication and Division
 [x] once the calculation is complete, send back the OK
-    [ ] Do a GET request after the POST to get the 
+    [x] Do a GET request after the POST to get the 
         actual calculation.
 
 

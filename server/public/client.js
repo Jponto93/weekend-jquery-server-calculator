@@ -43,6 +43,9 @@ function submitCalculation () {
     }).then(function (response) {
         console.log('successful POST', response)
         getCalculations();
+        //clear number inputs
+        $('#firstNumber').val('');
+        $('#secondNumber').val('');
     }).catch(function (response) {
         alert ('POST Failed')
     })
@@ -62,6 +65,7 @@ function getCalculations () {
         let answer = response[response.length-1].answer;
         console.log(answer);
         renderAnswerToDom(answer);
+        renderHistoryToDom(response);
         // renderToDom(response);
 
     }).catch(function () {
@@ -70,11 +74,26 @@ function getCalculations () {
 }
 
 function renderAnswerToDom(number){
+    console.log('inside renderAnswerToDom');
+    
     $('#answer').empty();
     $('#answer').append(
     `
     ${number}
     `);
 } // end renderToDom
+
+function renderHistoryToDom(answers) {
+    console.log('inside renderHistoryToDom');
+    let el = $('#history');
+    el.empty();
+    for (let answer of answers){
+        el.append(`
+        <ul>
+            <li>${answer.firstNumber} ${answer.operator} ${answer.secondNumber} = ${answer.answer}</li>
+        </ul>
+        `)
+    } // end for
+} // renderHistoryToDom
 
 
