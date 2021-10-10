@@ -11,12 +11,12 @@
 [ ] c button should clear the input
 
 
-[ ] build out server-side logic to compute numbers 
+[x] build out server-side logic to compute numbers 
     as appropriate.
-    [ ] the server should be able to handle 
+    [x] the server should be able to handle 
         Addition, Subtraction, 
         Multiplication and Division
-[ ] once the calculation is complete, send back the OK
+[x] once the calculation is complete, send back the OK
     [ ] Do a GET request after the POST to get the 
         actual calculation.
 

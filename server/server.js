@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const PORT = 5000;
 
-app.use(express.static('../server/public/'));
+app.use(express.static('server/public'));
 
 app.listen(PORT, () => {
     console.log('listening on port', PORT);
@@ -27,27 +27,27 @@ app.post('/calculate', (req, res) => {
     let answer = 0;
     // let problem = data sent from client
     let problem = req.body;
-    console.log(req.body);
+    console.log('this is req.body', req.body);
     
     switch(problem.operator){
         case '+': 
-            answer = Number(problem.firstNumber) + Number(problem.secondNumber);
+            problem.answer = Number(problem.firstNumber) + Number(problem.secondNumber);
         break;
 
         case '-': 
-            answer = Number(problem.firstNumber) - Number(problem.secondNumber);
+            problem.answer = problem.firstNumber - problem.secondNumber;
         break;
 
         case '*':
-            answer = Number(problem.firstNumber) * Number(problem.secondNumber);
+            problem.answer = problem.firstNumber * problem.secondNumber;
         break;
 
         case '/':
-            answer = Number(problem.firstNumber) / Number(problem.secondNumber);
+            problem.answer = problem.firstNumber / problem.secondNumber;
         break;
         
     }
-    console.log(answer);
+    console.log('this is the answer', problem.answer);
     
 
     // push the problem into data (storage)
