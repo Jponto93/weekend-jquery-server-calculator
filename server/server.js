@@ -5,7 +5,9 @@ const app = express();
 
 const bodyParser = require('body-parser');
 
-const data = require('./modules/data')
+let data = require('./modules/data');
+
+const send = require('send');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -16,6 +18,12 @@ app.use(express.static('server/public'));
 app.listen(PORT, () => {
     console.log('listening on port', PORT);
 });
+
+app.get('/clearData', (req, res) => {
+    console.log('inside app.get clearData');
+    data = [];
+    res.send(data);
+})
 
 app.get('/calculate', (req, res) => {
     res.send(data);

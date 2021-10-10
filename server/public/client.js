@@ -24,8 +24,11 @@ function clearHistory () {
     console.log('inside clearHistory');
     let el = $('#history');
     el.empty();
+    clearData();
+
     
 } // clearHistory
+
 function addMathOperator() {
     console.log('inside addMathOperator');
     //log the operator clicked
@@ -37,8 +40,6 @@ function addMathOperator() {
     return operator = $(this).html()
 
 }// addMathOperator
-
-
 
 function submitCalculation() {
     console.log('inside submitCalculation');
@@ -66,9 +67,6 @@ function submitCalculation() {
         alert('Missing input')
     }
 }
-
-
-
 
 function getCalculations() {
     console.log('inside get calculations');
@@ -113,5 +111,21 @@ function renderHistoryToDom(answers) {
         `)
     } // end for
 } // renderHistoryToDom
+
+function clearData () {
+    console.log('in clearData');
+    $.ajax({
+        method: 'GET',
+        url: 'clearData',
+    }).then(function (response) {
+        console.log('success', response);
+
+        
+    }).catch(function() {
+        alert('failed GET clearData')
+    })
+    
+} // end clearData
+
 
 
