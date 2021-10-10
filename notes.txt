@@ -21,11 +21,11 @@
         actual calculation.
 
 
-[ ] Keep a historical record of all math operations
+[x] Keep a historical record of all math operations
     and solutions on the server.
-[ ] display a list of all previous calculations
+[x] display a list of all previous calculations
     when it loads using GET request.
-[ ] update the request when a new calculation
+[x] update the request when a new calculation
     is made.
 
 // History should exist 
