@@ -7,6 +7,7 @@ function ready() {
     $('.opBtn').on('click', addMathOperator)
     $('#submitBtn').on('click', submitCalculation)
     $('#clearBtn').on('click', clearInputs)
+    $('#answerDisplay').on('click', '#clearHistoryBtn', clearHistory)
 } // ready
 
 let operator = '';
@@ -19,7 +20,12 @@ function clearInputs() {
     operator = '';
 } // end clearInputs
 
-
+function clearHistory () {
+    console.log('inside clearHistory');
+    let el = $('#history');
+    el.empty();
+    
+} // clearHistory
 function addMathOperator() {
     console.log('inside addMathOperator');
     //log the operator clicked
@@ -91,6 +97,7 @@ function renderAnswerToDom(number) {
     <h2 id="answer">
         ${number}
     </h2>
+    <button id="clearHistoryBtn">Clear History</button>
     `);
 } // end renderToDom
 

@@ -8,7 +8,7 @@
     [x] capture the input
     [x] bundle it up in an object
     [x] send this object to the server via a POST
-[ ] c button should clear the input
+[x] c button should clear the input
 
 
 [x] build out server-side logic to compute numbers 
@@ -38,9 +38,9 @@ STRETCH GOALS
 [ ] Convert the interface to look and behave
 like an actual calculator 
 
-[ ] Only allow the POST call to happen
+[x] Only allow the POST call to happen
     if all necessary input is ready
-    [ ] Show an alert if they left something empty
+    [x] Show an alert if they left something empty
         and don't send bad or incomplete
         data to the server
 [ ] allow a user to clear the history 
