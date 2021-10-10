@@ -52,12 +52,11 @@ function submitCalculation() {
             console.log('successful POST', response)
             getCalculations();
             //clear number inputs
-            $('#firstNumber').val('');
-            $('#secondNumber').val('');
+            clearInputs();
         }).catch(function (response) {
             alert('POST Failed')
         })
-    } else if (!num1 || !num2 || !operator) {
+    } else {
         alert('Missing input')
     }
 }
