@@ -43,7 +43,7 @@ like an actual calculator
     [x] Show an alert if they left something empty
         and don't send bad or incomplete
         data to the server
-[ ] allow a user to clear the history 
+[x] allow a user to clear the history 
     by clicking on a button
     [ ] this should not be get or post,
         Look into 'DELETE' request.

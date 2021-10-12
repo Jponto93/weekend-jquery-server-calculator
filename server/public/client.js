@@ -1,17 +1,32 @@
+
 console.log('hello from client js');
 
 $(ready);
 
 function ready() {
     console.log('JQ Ready');
-    $('.opBtn').on('click', addMathOperator)
+    // $('.opBtn').on('click', addMathOperator)
     $('#submitBtn').on('click', submitCalculation)
     $('#clearBtn').on('click', clearInputs)
     $('#answerDisplay').on('click', '#clearHistoryBtn', clearHistory)
+    $('.numBtn').on('click', numberClicker)
 } // ready
 
+let liveNumTracker = '';
 let operator = '';
 let opData = 0;
+let firstNumber = 0;
+let secondNumber = 0;
+
+
+function numberClicker () {
+    console.log('inside number clicker');
+    console.log($(this).html());
+    liveNumTracker += $(this).html();
+    console.log(liveNumTracker);
+    
+    
+} // numberClicker
 
 function clearInputs() {
     console.log('in clearInputs');
@@ -33,26 +48,31 @@ function addMathOperator() {
     console.log('inside addMathOperator');
     //log the operator clicked
     console.log('this.html', $(this).html());
-    //assign operator clicked to operator variable
-    // opData = $(this).data();
-    // console.log(opData);
-
+    //assign current live number to firstNumber
+    firstNumber = Number(liveNumTracker);
+    liveNumTracker = '';
+    console.log('firstNumber', firstNumber);
+    console.log('liveNumTracker', liveNumTracker);
+    
+    
+    // save operator
     return operator = $(this).html()
 
 }// addMathOperator
 
 function submitCalculation() {
     console.log('inside submitCalculation');
-    let num1 = $('#firstNumber').val();
-    let num2 = $('#secondNumber').val();
-    console.log(`First number: ${num1}, op is ${operator}, Second number: ${num2}`);
-    if (num1 && num2 && operator) {
+    // assign current live number to second number
+    secondNumber = Number(liveNumTracker);
+    liveNumTracker = 0;
+    console.log(`First number: ${firstNumber}, op is ${operator}, Second number: ${secondNumber}`);
+    if (firstNumber && secondNumber && operator) {
         $.ajax({
             method: 'POST',
             url: '/calculate',
             data: {
-                firstNumber: $('#firstNumber').val(),
-                secondNumber: $('#secondNumber').val(),
+                firstNumber: firstNumber,
+                secondNumber: secondNumber,
                 operator: operator,
             }
         }).then(function (response) {
@@ -115,8 +135,8 @@ function renderHistoryToDom(answers) {
 function clearData () {
     console.log('in clearData');
     $.ajax({
-        method: 'GET',
-        url: 'clearData',
+        method: 'DELETE',
+        url: 'deleteData',
     }).then(function (response) {
         console.log('success', response);
 

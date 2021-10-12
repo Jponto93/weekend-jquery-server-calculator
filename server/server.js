@@ -11,7 +11,7 @@ const send = require('send');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.static('server/public'));
 
@@ -19,8 +19,8 @@ app.listen(PORT, () => {
     console.log('listening on port', PORT);
 });
 
-app.get('/clearData', (req, res) => {
-    console.log('inside app.get clearData');
+app.delete('/deleteData', (req, res) => {
+    console.log('inside app.get deleteData');
     data = [];
     res.send(data);
 })
